@@ -2,9 +2,35 @@
 
 <div mat-dialog-content>
     <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
+        <mat-label>Select Bike Type</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let bikeType of bikeTypes" [value]="bikeType">
+                {{bikeType}}
+            </mat-option>
+        </mat-select>
     </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Select Bike Brand</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let bikeBrand of filteredOptions | async" [value]="bikeBrand">
+                {{bikeBrand}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+        <mat-label>Enter Bike Model</mat-label>
+        <input matInput placeholder="Ex. TVS Radeon" [matAutocomplete]="auto" [formControl]="myControl">
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let bikeModel of filteredOptions | async" [value]="bikeModel">
+                {{bikeModel}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+
+
+
 </div>
