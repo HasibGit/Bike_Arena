@@ -1,36 +1,70 @@
 <h1 mat-dialog-title>Add Bike</h1>
 
 <div mat-dialog-content>
-    <mat-form-field appearance="outline">
-        <mat-label>Select Bike Type</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let bikeType of bikeTypes" [value]="bikeType">
-                {{bikeType}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+    <form [formGroup]="productForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Select Bike Type</mat-label>
+            <mat-select formControlName="bikeType">
+                <mat-option *ngFor="let bikeType of bikeTypes" [value]="bikeType">
+                    {{bikeType}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
-    <mat-form-field appearance="outline">
-        <mat-label>Select Bike Brand</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let bikeBrand of filteredOptions | async" [value]="bikeBrand">
-                {{bikeBrand}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-
-
-    <mat-form-field appearance="outline">
-        <mat-label>Enter Bike Model</mat-label>
-        <input matInput placeholder="Ex. TVS Radeon" [matAutocomplete]="auto" [formControl]="myControl">
-        <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let bikeModel of filteredOptions | async" [value]="bikeModel">
-                {{bikeModel}}
-            </mat-option>
-        </mat-autocomplete>
-    </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Select Bike Brand</mat-label>
+            <mat-select formControlName="bikeBrand">
+                <mat-option *ngFor="let bikeBrand of bikeBrands" [value]="bikeBrand">
+                    {{bikeBrand}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
 
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Bike Model</mat-label>
+            <input formControlName="bikeModel" matInput placeholder="Ex. TVS Radeon" [matAutocomplete]="auto"
+                [formControl]="myControl">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let bikeModel of filteredOptions | async" [value]="bikeModel">
+                    {{bikeModel}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Kilometers Run</mat-label>
+            <input formControlName="kilometersRun" type="number" matInput>
+        </mat-form-field>
 
 
+        <mat-form-field appearance="outline">
+            <mat-label>Engine Capacity</mat-label>
+            <input formControlName="engineCapacity" type="number" matInput>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input formControlName="date" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input formControlName="price" type="number" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea formControlName="description" name="" id="" cols="30" rows="10" matInput></textarea>
+        </mat-form-field>
+    </form>
+</div>
+
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button mat-raised-button color="primary" style="margin-left: 8px" (click)="saveData()">Save</button>
 </div>

@@ -1,0 +1,36 @@
+{
+  "productList": [
+    {
+      "bikeType": "Standard",
+      "bikeBrand": "TVS",
+      "bikeModel": "TVS Radeon",
+      "kilometersRun": 1000,
+      "engineCapacity": 100,
+      "date": "2022-03-11T18:00:00.000Z",
+      "price": 80000,
+      "description": "Best retro looking commuter bike available in the market",
+      "id": 1
+    },
+    {
+      "bikeType": "Mopad",
+      "bikeBrand": "TVS",
+      "bikeModel": "TVS XL 100",
+      "kilometersRun": 500,
+      "engineCapacity": 100,
+      "date": "2022-03-02T18:00:00.000Z",
+      "price": 60000,
+      "description": "Cheapest mopad in the market",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
