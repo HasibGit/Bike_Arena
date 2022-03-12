@@ -7,20 +7,31 @@
       "kilometersRun": 1000,
       "engineCapacity": 100,
       "date": "2022-03-11T18:00:00.000Z",
-      "price": 80000,
+      "price": 90000,
       "description": "Best retro looking commuter bike available in the market",
       "id": 1
     },
     {
-      "bikeType": "Mopad",
-      "bikeBrand": "TVS",
-      "bikeModel": "TVS XL 100",
-      "kilometersRun": 500,
-      "engineCapacity": 100,
-      "date": "2022-03-02T18:00:00.000Z",
-      "price": 60000,
-      "description": "Cheapest mopad in the market",
+      "bikeType": "Standard",
+      "bikeBrand": "Hero",
+      "bikeModel": "TVS Radeon",
+      "kilometersRun": 3000,
+      "engineCapacity": 123,
+      "date": "2022-03-06T18:00:00.000Z",
+      "price": 1000,
+      "description": "adfsjdq",
       "id": 2
+    },
+    {
+      "bikeType": "Standard",
+      "bikeBrand": "Yamaha",
+      "bikeModel": "asdasdasd",
+      "kilometersRun": 2523423,
+      "engineCapacity": 123,
+      "date": "2022-03-05T18:00:00.000Z",
+      "price": 12312312,
+      "description": "vcwefasvascas",
+      "id": 3
     }
   ],
   "comments": [

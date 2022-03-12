@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Add Bike</h1>
+<h1 mat-dialog-title>{{dialogTitle}}</h1>
 
 <div mat-dialog-content>
     <form [formGroup]="productForm">
@@ -66,5 +66,5 @@
 
 <div mat-dialog-action [align]="'end'">
     <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-    <button mat-raised-button color="primary" style="margin-left: 8px" (click)="saveData()">Save</button>
+    <button mat-raised-button color="primary" style="margin-left: 8px" (click)="saveData()">{{actionBtn}}</button>
 </div>
